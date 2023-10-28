@@ -1,0 +1,24 @@
+{
+    "root": true,
+    "ignorePatterns": [
+        "dist/*",
+        "node_modules/*",
+        "webpack.config.js"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "prettier"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "prettier/prettier": ["error"]
+    }
+}
