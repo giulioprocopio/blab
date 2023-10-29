@@ -18,6 +18,11 @@ module.exports = function (env, argv) {
                     test: /\.(js|ts)x?$/,
                     use: ['babel-loader', 'ts-loader'],
                     exclude: /node_modules/
+                },
+                {
+                    test: /\.(css|scss|sass)$/,
+                    use: ['style-loader', 'css-loader'],
+                    exclude: /node_modules/
                 }
             ]
         },
