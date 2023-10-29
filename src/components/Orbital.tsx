@@ -19,7 +19,7 @@ class Orbital extends React.Component<OrbitalProps> {
         lines: 2,
         omega: 0,
         psi: 0,
-        radius: 60,
+        radius: 40,
         width: 4,
         _center: { x: 0, y: 0 }
     };
