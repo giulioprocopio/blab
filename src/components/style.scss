@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
+.blab-atom {
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+
+    > svg {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+
+        > .blab-nucleus {
+            > .blab-nucleus-symbol {
+                font-family: 'Poppins', sans-serif;
+                transform: translateY(0.5%); // Fixes optical illusions.
+            }
+        }
+    }
+}
