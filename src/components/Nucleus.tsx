@@ -7,15 +7,19 @@ type NucleusProps = {
     radius: number;
     symbol: string;
     symbolColor: string;
+    symbolSize: number;
+    symbolOffset: { x: number; y: number };
     _center: { x: number; y: number };
 };
 
 class Nucleus extends React.Component<NucleusProps> {
     static defaultProps = {
         color: 'black',
-        radius: 30,
-        symbol: 'N',
+        radius: 25,
+        symbol: 'B',
         symbolColor: 'white',
+        symbolSize: 30,
+        symbolOffset: { x: 0, y: 3 }, // Fix font baseline.
         _center: { x: 0, y: 0 }
     };
 
@@ -29,8 +33,10 @@ class Nucleus extends React.Component<NucleusProps> {
                     className='blab-nucleus-symbol'
                     dominantBaseline='middle'
                     fill={this.props.symbolColor}
-                    fontSize={this.props.radius}
-                    textAnchor='middle'>
+                    fontSize={this.props.symbolSize}
+                    textAnchor='middle'
+                    x={this.props.symbolOffset.x}
+                    y={this.props.symbolOffset.y}>
                     {this.props.symbol}
                 </text>
             </svg>

@@ -4,7 +4,6 @@
     display: inline-block;
     height: 100%;
     overflow: hidden;
-    padding-bottom: 100%;
     position: relative;
     vertical-align: top;
     width: 100%;
@@ -17,7 +16,6 @@
         > .blab-nucleus {
             > .blab-nucleus-symbol {
                 font-family: 'Poppins', sans-serif;
-                transform: translateY(0.5%); /* Fixes optical illusions. */
             }
         }
     }
