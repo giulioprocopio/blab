@@ -30,9 +30,6 @@ class Atom extends React.Component<AtomProps> {
     render() {
         const c = this.state.center;
 
-        console.log('Atom render');
-        console.log(this.state.center);
-
         const children = React.Children.map(this.props.children, (child) => {
             if (React.isValidElement(child)) {
                 return React.cloneElement(child, {
