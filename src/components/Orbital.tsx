@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.scss';
+
 type OrbitalProps = {
     children: React.ReactNode;
     color: string;

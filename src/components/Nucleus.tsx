@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.scss';
+
 type NucleusProps = {
     color: string;
     radius: number;
