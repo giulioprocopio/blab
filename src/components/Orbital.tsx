@@ -27,9 +27,24 @@ class Orbital extends React.Component<OrbitalProps> {
     render() {
         const c = this.props._center;
 
+        const childCount = React.Children.count(this.props.children),
+            childAngleDistance = (2 * Math.PI) / childCount;
+        const children = React.Children.map(this.props.children, (child, i) => {
+            if (React.isValidElement(child)) {
+                const childAngle = childAngleDistance * i + this.props.psi;
+                return React.cloneElement(child, {
+                    _center: {
+                        x: Math.cos(childAngle) * this.props.radius,
+                        y: Math.sin(childAngle) * this.props.radius
+                    }
+                } as React.Attributes);
+            }
+        });
+
         // User may define more than one line.  Evaluate stroke tickness to fit
         // evenly spaced lines within the given width.
-        const lineWidth = this.props.width / (2 * this.props.lines - 1);
+        const width = this.props.width / (2 * this.props.lines - 1),
+            radius = this.props.radius + this.props.width / 2;
 
         return (
             <svg className='blab-orbital' overflow='visible' x={c.x} y={c.y}>
@@ -38,13 +53,13 @@ class Orbital extends React.Component<OrbitalProps> {
                         <circle
                             key={i}
                             fill='none'
-                            r={this.props.radius - 2 * lineWidth * (i + 1)}
+                            r={radius - 2 * width * i}
                             stroke={this.props.color}
-                            strokeWidth={lineWidth}
+                            strokeWidth={width}
                         />
                     );
                 })}
-                {this.props.children}
+                {children}
             </svg>
         );
     }
