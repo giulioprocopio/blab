@@ -1,11 +1,19 @@
 import React from 'react';
 
-const Electron = () => {
-    return (
-        <svg>
-            <circle cx='100' cy='100' r='40' />
-        </svg>
-    );
+type ElectronProps = {
+    color: string;
+    radius: number;
 };
+
+class Electron extends React.Component<ElectronProps> {
+    static defaultProps = {
+        color: 'black',
+        radius: 3
+    };
+
+    render() {
+        return <circle fill={this.props.color} r={this.props.radius} />;
+    }
+}
 
 export default Electron;
