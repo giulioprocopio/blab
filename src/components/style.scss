@@ -17,7 +17,7 @@
         > .blab-nucleus {
             > .blab-nucleus-symbol {
                 font-family: 'Poppins', sans-serif;
-                transform: translateY(0.5%); // Fixes optical illusions.
+                transform: translateY(0.5%); /* Fixes optical illusions. */
             }
         }
     }
