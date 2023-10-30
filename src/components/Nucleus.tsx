@@ -18,8 +18,8 @@ class Nucleus extends React.Component<NucleusProps> {
         radius: 25,
         symbol: 'B',
         symbolColor: 'white',
-        symbolSize: 30,
-        symbolOffset: { x: 0, y: 3 }, // Fix font baseline.
+        symbolSize: 20,
+        symbolOffset: { x: 0, y: 2 }, // Fix font baseline.
         _center: { x: 0, y: 0 }
     };
 
