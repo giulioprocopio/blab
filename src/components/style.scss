@@ -14,9 +14,22 @@
         left: 0;
 
         > .blab-nucleus {
-            > .blab-nucleus-symbol {
+            > .blab-symbol {
                 font-family: 'Poppins', sans-serif;
             }
         }
+
+        > .blab-orbital {
+            transform-origin: 50% 50%;
+        }
+    }
+}
+
+@keyframes blab-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

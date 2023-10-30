@@ -17,7 +17,7 @@ class Orbital extends React.Component<OrbitalProps> {
     static defaultProps = {
         color: 'black',
         lines: 2,
-        omega: 0,
+        omega: 1,
         psi: 0,
         radius: 40,
         width: 4,
@@ -34,8 +34,8 @@ class Orbital extends React.Component<OrbitalProps> {
                 const childAngle = childAngleDistance * i + this.props.psi;
                 return React.cloneElement(child, {
                     _center: {
-                        x: Math.cos(childAngle) * this.props.radius,
-                        y: Math.sin(childAngle) * this.props.radius
+                        x: Math.cos(childAngle) * this.props.radius + c.x,
+                        y: Math.sin(childAngle) * this.props.radius + c.y
                     }
                 } as React.Attributes);
             }
@@ -47,7 +47,13 @@ class Orbital extends React.Component<OrbitalProps> {
             radius = this.props.radius + this.props.width / 2;
 
         return (
-            <svg className='blab-orbital' overflow='visible' x={c.x} y={c.y}>
+            <g
+                className='blab-orbital'
+                style={{
+                    animation: `blab-spin ${
+                        (2 * Math.PI) / this.props.omega
+                    }s linear infinite`
+                }}>
                 {[...Array(this.props.lines)].map((_, i) => {
                     return (
                         <circle
@@ -56,11 +62,13 @@ class Orbital extends React.Component<OrbitalProps> {
                             r={radius - 2 * width * i}
                             stroke={this.props.color}
                             strokeWidth={width}
+                            cx={c.x}
+                            cy={c.y}
                         />
                     );
                 })}
                 {children}
-            </svg>
+            </g>
         );
     }
 }

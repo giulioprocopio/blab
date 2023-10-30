@@ -27,19 +27,24 @@ class Nucleus extends React.Component<NucleusProps> {
         const c = this.props._center;
 
         return (
-            <svg className='blab-nucleus' overflow='visible' x={c.x} y={c.y}>
-                <circle fill={this.props.color} r={this.props.radius} />
+            <g className='blab-nucleus'>
+                <circle
+                    cx={c.x}
+                    cy={c.y}
+                    fill={this.props.color}
+                    r={this.props.radius}
+                />
                 <text
-                    className='blab-nucleus-symbol'
+                    className='blab-symbol'
                     dominantBaseline='middle'
                     fill={this.props.symbolColor}
                     fontSize={this.props.symbolSize}
                     textAnchor='middle'
-                    x={this.props.symbolOffset.x}
-                    y={this.props.symbolOffset.y}>
+                    x={c.x + this.props.symbolOffset.x}
+                    y={c.y + this.props.symbolOffset.y}>
                     {this.props.symbol}
                 </text>
-            </svg>
+            </g>
         );
     }
 }
