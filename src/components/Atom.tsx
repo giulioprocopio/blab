@@ -2,18 +2,21 @@ import React from 'react';
 
 import './style.scss';
 
-interface AtomProps {
+type AtomProps = {
     children: React.ReactNode;
-}
+};
 
-class Atom extends React.Component<AtomProps> {
-    state: { center: { x: number; y: number } };
+type AtomState = {
+    center: { x: number; y: number };
+};
+
+class Atom extends React.Component<AtomProps, AtomState> {
+    state: AtomState = { center: { x: 0, y: 0 } };
     ref: React.RefObject<HTMLDivElement>;
 
     constructor(props: AtomProps) {
         super(props);
 
-        this.state = { center: { x: 0, y: 0 } };
         this.ref = React.createRef();
     }
 
