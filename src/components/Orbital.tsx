@@ -14,6 +14,10 @@ type OrbitalProps = {
 };
 
 class Orbital extends React.Component<OrbitalProps> {
+    // XXX: We don't really have nice way of evaluating the orbital radius, so
+    // we just pick a default value a little larger than the nucleus radius.
+    // Note though that when rendering multiple orbitals, their default radii
+    // will overlap, at wich point the user should specify a radius.
     static defaultProps = {
         color: 'black',
         lines: 2,
