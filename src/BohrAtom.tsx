@@ -52,7 +52,7 @@ class BohrAtom extends React.Component<BohrAtomProps> {
                 {atomicData.electron_config.map((electrons, i) => (
                     <Orbital
                         key={i}
-                        omega={(2 * Math.PI) / electrons} // XXX: Temporary.
+                        omega={((2 * Math.PI) / electrons) * 0.5} // XXX: Temporary.
                         radius={
                             this.props.nucleusRadius +
                             (i + 1) * this.props.orbitalRadiusDelta
