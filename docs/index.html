@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bohr's Lab Demo</title>
+        <style>
+            * {margin: 0; padding: 0}
+
+            .container {
+                height: 50vh;
+                margin: 0 auto;
+                width: 50vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="./blab.min.js"></script>
+        <script type="text/babel">
+        function App() {
+            return (
+            <div className="container">
+                <BLab.BohrAtom z={5} />
+            </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        </script>
+    </body>
+</html>
