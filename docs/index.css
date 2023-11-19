@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.spacer {
+    height: 100px;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.text {
+    font-family: 'Poppins', sans-serif; /* Bundled with BLab. */
+    padding: 0 20px;
+}
+
+.atom {
+    margin: 20px 0;
+}

@@ -5,15 +5,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bohr's Lab Demo</title>
-        <style>
-        * {margin: 0; padding: 0}
-
-        .container {
-            height: 50vh;
-            margin: 0 auto;
-            width: 50vw;
-        }
-        </style>
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
         <div id="root"></div>
@@ -23,11 +15,18 @@
         <script src="./blab.min.js"></script>
         <script type="text/babel">
         function App() {
-            return (
+            return (<>
+            <div className='spacer' />
             <div className='container'>
-                <BLab.BohrAtom z={5} />
+                <div className='text'>
+                    <h1>Bohr's Lab Demo</h1>
+                    <p>This is a Boron atom, with its 5 electrons.</p>
+                </div>
+                <div className='atom'>
+                    <BLab.BohrAtom z={5} />
+                </div>
             </div>
-            );
+            </>);
         }
 
         ReactDOM.createRoot(document.getElementById('root')).render(<App />);
